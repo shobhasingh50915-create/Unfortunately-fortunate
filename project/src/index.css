@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 190 100% 95%;
+
+    --card: 240 10% 8%;
+    --card-foreground: 190 100% 95%;
+
+    --popover: 240 10% 8%;
+    --popover-foreground: 190 100% 95%;
+
+    --primary: 186 100% 50%;
+    --primary-foreground: 0 0% 2%;
+
+    --secondary: 295 100% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 12%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 2%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 186 40% 15%;
+    --input: 240 5% 15%;
+    --ring: 186 100% 50%;
+
+    --radius: 0.5rem;
+
+    /* Custom cyberpunk tokens */
+    --neon-cyan: 186 100% 50%;
+    --neon-magenta: 295 100% 45%;
+    --chai-amber: 38 92% 50%;
+    --deep-space: 0 0% 2%;
+    --surface-glass: 240 10% 8%;
+
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Space Grotesk', sans-serif;
+
+    --glow-cyan: 0 0 20px hsl(186 100% 50% / 0.4), 0 0 60px hsl(186 100% 50% / 0.15);
+    --glow-magenta: 0 0 20px hsl(295 100% 45% / 0.4), 0 0 60px hsl(295 100% 45% / 0.15);
+    --glow-amber: 0 0 20px hsl(38 92% 50% / 0.4), 0 0 60px hsl(38 92% 50% / 0.15);
+
+    --sidebar-background: 240 10% 5%;
+    --sidebar-foreground: 190 100% 95%;
+    --sidebar-primary: 186 100% 50%;
+    --sidebar-primary-foreground: 0 0% 2%;
+    --sidebar-accent: 240 5% 12%;
+    --sidebar-accent-foreground: 190 100% 95%;
+    --sidebar-border: 186 40% 15%;
+    --sidebar-ring: 186 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  /* Custom neon scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: hsl(0 0% 2%);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: hsl(186 100% 50% / 0.3);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(186 100% 50% / 0.6);
+  }
+}
+
+@layer utilities {
+  .text-glow-cyan {
+    text-shadow: 0 0 10px hsl(186 100% 50% / 0.6), 0 0 40px hsl(186 100% 50% / 0.2);
+  }
+  .text-glow-magenta {
+    text-shadow: 0 0 10px hsl(295 100% 45% / 0.6), 0 0 40px hsl(295 100% 45% / 0.2);
+  }
+  .text-glow-amber {
+    text-shadow: 0 0 10px hsl(38 92% 50% / 0.6), 0 0 40px hsl(38 92% 50% / 0.2);
+  }
+  .glass-surface {
+    background: hsl(240 10% 8% / 0.7);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(186 100% 50% / 0.12);
+  }
+  .glass-surface-magenta {
+    background: hsl(295 100% 45% / 0.06);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(295 100% 45% / 0.15);
+  }
+  .neon-border-cyan {
+    border: 1px solid hsl(186 100% 50% / 0.3);
+    box-shadow: 0 0 10px hsl(186 100% 50% / 0.1), inset 0 0 10px hsl(186 100% 50% / 0.05);
+  }
+  .neon-border-magenta {
+    border: 1px solid hsl(295 100% 45% / 0.3);
+    box-shadow: 0 0 10px hsl(295 100% 45% / 0.1), inset 0 0 10px hsl(295 100% 45% / 0.05);
+  }
+  .gradient-cyber {
+    background: linear-gradient(135deg, hsl(186 100% 50%), hsl(295 100% 45%));
+  }
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(186 100% 50% / 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(186 100% 50% / 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .perspective-800 {
+    perspective: 800px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
